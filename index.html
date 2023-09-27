@@ -23,14 +23,14 @@
   </style>
 </head>
 <body>
-  <h1>SmaPri Print Test</h1>
+  <h1>SmaPri Print Test v0.1</h1>
   <textarea id="textarea" placeholder="Type your text here"></textarea>
   <button id="print-button" onclick="printContent()">Print</button>
 
   <script>
     function printContent() {
         var content = document.getElementById('textarea').value;
-        var printercommand = "^A^E10^V100^H200^P2^L0304^XM"
+        var printercommand = "^A^E10^V10^H10^P2^L0304^J^XU"
         const splitContent = content.split(/\r?\n/);
         for (const line in splitContent) {
             printercommand = printercommand + line + "+CR"
