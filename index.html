@@ -30,13 +30,13 @@
   <script>
     function printContent() {
         var content = document.getElementById('textarea').value;
-        var printercommand = "^A^E10^V10^H10^XM^J"
+        var printercommand = "^A^E80^V10^H10^J"
         const splitContent = content.split(/\r?\n/);
 
-        // for (const line in splitContent) {
-        //     printercommand = printercommand + line + "+CR"
-        // }
-          printercommand = printercommand + content
+        for (const line in splitContent) {
+            printercommand = printercommand + line + "+CR\n"
+        }
+
         var printercommand = printercommand + "^Q1^Z";
 
         var request = "smapri:/Printer/SendCommand?__command=" + printercommand + "&__success_redirect_url=http://coreybourke.github.io&__failure_redirect_url=http://coreybourke.github.io"
