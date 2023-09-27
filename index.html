@@ -39,7 +39,7 @@
         var printercommand = printercommand + "^Q1^Z";
 
         var request = "smapri:/Printer/SendCommand?__command=" + printercommand + "&__success_redirect_url=http://example.com/success/&__failure_redirect_url=http://example.com/failure/"
-        window.location.href = encodeURIComponent(request);
+        window.location.href = encodeURI(request);
     }
   </script>
 </body>
